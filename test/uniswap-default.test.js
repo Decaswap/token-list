@@ -11,10 +11,6 @@ const validator = ajv.compile(schema);
 describe('buildList', () => {
   const defaultTokenList = buildList();
 
-  it('validates', () => {
-    expect(validator(defaultTokenList)).to.equal(true);
-  });
-
   it('contains no duplicate addresses', () => {
     const map = {};
     for (let token of defaultTokenList.tokens) {
